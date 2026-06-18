@@ -1,0 +1,64 @@
+{
+    "hero_slides": [
+        {
+            "image": "/assets/img/banners/banner-1.webp",
+            "heading": "Fresh Flowers, Delivered with Love",
+            "subtext": "Same-day delivery on hand-tied bouquets across India.",
+            "cta_text": "Shop Flowers",
+            "cta_link": "/flowers"
+        },
+        {
+            "image": "/assets/img/banners/banner-2.webp",
+            "heading": "Celebrate Every Occasion",
+            "subtext": "Cakes, chocolates and combos for birthdays and anniversaries.",
+            "cta_text": "Explore Gifts",
+            "cta_link": "/combos"
+        },
+        {
+            "image": "/assets/img/banners/banner-3.webp",
+            "heading": "Freshly Baked Cakes",
+            "subtext": "Eggless options available. Baked fresh, delivered fast.",
+            "cta_text": "Order Cakes",
+            "cta_link": "/cakes"
+        },
+        {
+            "image": "/assets/img/banners/banner-4.webp",
+            "heading": "Send Roses That Say It All",
+            "subtext": "Romantic rose bouquets for the ones you love.",
+            "cta_text": "Shop Roses",
+            "cta_link": "/flowers/roses"
+        }
+    ],
+    "promo_tiles": [
+        {
+            "image": "/assets/img/banners/promo-anniversary.webp",
+            "heading": "Anniversary Specials",
+            "link": "/occasions?occasion=anniversary"
+        },
+        {
+            "image": "/assets/img/banners/promo-birthday.webp",
+            "heading": "Birthday Surprises",
+            "link": "/occasions?occasion=birthday"
+        }
+    ],
+    "featured_product_ids": [1, 13, 24, 21, 9, 7, 20, 17],
+    "seo": {
+        "h1": "Send Flowers, Cakes & Gifts Online in India",
+        "intro": "WithLoveNRegards is Pune's trusted online florist and gifting destination. From fresh hand-tied bouquets and freshly baked cakes to premium chocolates and curated combos, we help you celebrate every moment with same-day delivery across Pune, Mumbai, Delhi, Bangalore, Hyderabad, Kolkata and Gurgaon.",
+        "blocks": [
+            {
+                "h2": "Fresh Flower Delivery for Every Occasion",
+                "body": "Whether it's an anniversary, a birthday or a simple gesture of love, our florists hand-pick the freshest seasonal blooms. Choose from roses, lilies, carnations, orchids and mixed bouquets, each arranged with care and delivered fresh to your door."
+            },
+            {
+                "h2": "Cakes, Chocolates & Thoughtful Combos",
+                "body": "Pair your flowers with a freshly baked cake or a box of premium chocolates. Our combos bring together blooms and sweets for double the joy, making gifting effortless and memorable."
+            },
+            {
+                "h2": "Same-Day Delivery Across India",
+                "body": "Order before 5 PM IST and enjoy same-day delivery in our serviceable cities. With secure payments and reliable doorstep delivery, sending gifts has never been easier."
+            }
+        ]
+    },
+    "announcement": "Same Day Delivery Available — Order before 5 PM"
+}

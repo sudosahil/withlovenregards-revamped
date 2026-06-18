@@ -1,0 +1,19 @@
+# Dependencies
+/vendor/
+/node_modules/
+
+# Local & runtime config (may contain secrets — CC Avenue keys, SMTP)
+/config/settings.json
+
+# Claude Code local settings
+/.claude/
+
+# Build / temp artifacts
+/.shots/
+_t_*.html
+*.log
+
+# OS / editor
+.DS_Store
+Thumbs.db
+desktop.ini

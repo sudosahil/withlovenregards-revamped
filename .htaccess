@@ -1,0 +1,82 @@
+# =========================================================================
+# WithLoveNRegards — clean URL routing
+# Category and city are resolved on independent, mutually exclusive rules so
+# the legacy /pune/pune/ doubling can never occur.
+# =========================================================================
+
+RewriteEngine On
+RewriteBase /
+
+# Force https + www (canonical host)
+# RewriteCond %{HTTPS} off
+# RewriteRule ^ https://www.withlovenregards.com%{REQUEST_URI} [L,R=301]
+
+# --- Skip rewriting for real files, directories and assets ---------------
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+RewriteRule ^(assets|api|admin/includes)/ - [L]
+
+# --- Static SEO endpoints -------------------------------------------------
+RewriteRule ^sitemap\.xml$ sitemap.php [L]
+RewriteRule ^robots\.txt$ robots.php [L]
+
+# --- City landing pages (resolved independently of categories) -----------
+# /sendflowers/pune  ->  sendflowers/city.php?city=pune
+RewriteRule ^sendflowers/([a-z\-]+)/?$ sendflowers/city.php?city=$1 [L,QSA]
+
+# --- Admin (everything under /admin maps to the admin folder) ------------
+RewriteRule ^admin/?$ admin/index.php [L,QSA]
+RewriteRule ^admin/([a-z\-]+)/?$ admin/$1.php [L,QSA]
+
+# --- Cart / checkout / account / search ----------------------------------
+RewriteRule ^cart/?$ pages/cart.php [L,QSA]
+RewriteRule ^checkout/?$ pages/checkout.php [L,QSA]
+RewriteRule ^order-confirmation/?$ pages/order-confirmation.php [L,QSA]
+RewriteRule ^login-register/?$ pages/login-register.php [L,QSA]
+RewriteRule ^my-account/?$ pages/my-account.php [L,QSA]
+RewriteRule ^wishlist/?$ pages/wishlist.php [L,QSA]
+RewriteRule ^search/?$ pages/search.php [L,QSA]
+
+# --- Static content pages -------------------------------------------------
+RewriteRule ^about-us/?$ pages/about-us.php [L,QSA]
+RewriteRule ^contact-us/?$ pages/contact-us.php [L,QSA]
+RewriteRule ^privacy-policy/?$ pages/privacy-policy.php [L,QSA]
+RewriteRule ^shipping-disclaimer/?$ pages/shipping-disclaimer.php [L,QSA]
+RewriteRule ^terms-and-conditions/?$ pages/terms-and-conditions.php [L,QSA]
+RewriteRule ^return-and-refund-policy/?$ pages/return-and-refund-policy.php [L,QSA]
+
+# --- Catalogue routing ----------------------------------------------------
+# Three-segment: /flowers/roses/red-roses-bunch  ->  product page
+RewriteRule ^([a-z0-9\-]+)/([a-z0-9\-]+)/([a-z0-9\-]+)/?$ pages/product.php?category=$1&subcategory=$2&slug=$3 [L,QSA]
+
+# Two-segment: /flowers/roses  ->  category + subcategory listing
+RewriteRule ^([a-z0-9\-]+)/([a-z0-9\-]+)/?$ pages/category.php?category=$1&subcategory=$2 [L,QSA]
+
+# One-segment: /flowers  ->  top-level category listing
+RewriteRule ^([a-z0-9\-]+)/?$ pages/category.php?category=$1 [L,QSA]
+
+# --- Error documents ------------------------------------------------------
+ErrorDocument 404 /pages/404.php
+
+# --- Hardening ------------------------------------------------------------
+Options -Indexes
+<FilesMatch "\.(env|json|md|lock)$">
+    Require all denied
+</FilesMatch>
+# Allow composer.json to remain readable to tooling but block dotfiles
+<FilesMatch "^\.">
+    Require all denied
+</FilesMatch>
+
+# --- Compression & caching ------------------------------------------------
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/css application/javascript application/json image/svg+xml
+</IfModule>
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType image/webp "access plus 30 days"
+    ExpiresByType text/css "access plus 7 days"
+    ExpiresByType application/javascript "access plus 7 days"
+</IfModule>

@@ -1,0 +1,19 @@
+{
+    "name": "withlovenregards/website",
+    "description": "WithLoveNRegards e-commerce florist & gifting platform",
+    "type": "project",
+    "license": "proprietary",
+    "require": {
+        "php": ">=8.2",
+        "phpmailer/phpmailer": "^6.9"
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "sort-packages": true
+    },
+    "autoload": {
+        "psr-4": {
+            "WLNR\\": "src/"
+        }
+    }
+}
