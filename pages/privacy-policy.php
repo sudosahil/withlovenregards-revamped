@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/../includes/functions.php';
+require_once __DIR__ . '/../core/functions.php';
 $legalTitle = 'Privacy Policy';
 $legalSlug = 'privacy-policy';
 $legalIntro = 'Your privacy matters to us. This policy explains what information we collect, how we use it and the choices you have.';
@@ -10,4 +10,4 @@ $legalSections = [
     ['Cookies', 'We use cookies and similar technologies to keep your cart and session active, remember preferences and measure site performance. You can manage cookies through your browser settings.'],
     ['Data Retention & Your Rights', 'We retain order records as required for accounting and legal purposes. You may request access to, correction of, or deletion of your personal data by contacting us.'],
 ];
-require __DIR__ . '/../includes/legal-page.php';
+require __DIR__ . '/../core/legal-page.php';

@@ -2,7 +2,7 @@
 /**
  * Wishlist AJAX endpoint. Actions: toggle | count | get.
  */
-require_once __DIR__ . '/../includes/functions.php';
+require_once __DIR__ . '/../core/functions.php';
 
 $action = $_REQUEST['action'] ?? '';
 

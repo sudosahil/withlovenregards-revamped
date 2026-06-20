@@ -12,8 +12,12 @@
 /.shots/
 _t_*.html
 *.log
+*.zip
 
 # OS / editor
 .DS_Store
 Thumbs.db
 desktop.ini
+
+# Local unzip of an older deploy build (stale structure)
+/fresh deploy/

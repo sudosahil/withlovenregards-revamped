@@ -6,7 +6,7 @@
  * CC Avenue tracking_id to the internal order number (merchant_param1), then on
  * success sends the invoice email via PHPMailer and clears the cart.
  */
-require_once __DIR__ . '/../includes/functions.php';
+require_once __DIR__ . '/../core/functions.php';
 require_once __DIR__ . '/../config/mail.php';
 
 $settings = site_settings();

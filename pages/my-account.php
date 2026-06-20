@@ -3,7 +3,7 @@
  * Customer account area. Tabs: orders | wishlist | details.
  * Protected — redirects to login if not authenticated.
  */
-require_once __DIR__ . '/../includes/functions.php';
+require_once __DIR__ . '/../core/functions.php';
 require_login();
 
 $user = current_user();
@@ -24,7 +24,7 @@ $seo = [
     'description' => 'Manage your orders, wishlist and account details.',
     'canonical'   => BASE_URL . '/my-account/',
 ];
-require __DIR__ . '/../includes/header.php';
+require __DIR__ . '/../core/header.php';
 
 $tabUrl = fn(string $t) => url('my-account?tab=' . $t);
 ?>
@@ -71,7 +71,7 @@ $tabUrl = fn(string $t) => url('my-account?tab=' . $t);
                     <?php else: ?>
                         <div class="product-grid">
                             <?php foreach ($wishProducts as $product) {
-                                include __DIR__ . '/../includes/product-card.php';
+                                include __DIR__ . '/../core/product-card.php';
                             } ?>
                         </div>
                     <?php endif; ?>
@@ -95,4 +95,4 @@ $tabUrl = fn(string $t) => url('my-account?tab=' . $t);
         </div>
     </div>
 </main>
-<?php require __DIR__ . '/../includes/footer.php'; ?>
+<?php require __DIR__ . '/../core/footer.php'; ?>

@@ -3,7 +3,7 @@
  * Single order view: customer, items, delivery, status update, internal note,
  * resend invoice, CC Avenue tracking id.
  */
-require_once __DIR__ . '/../includes/functions.php';
+require_once __DIR__ . '/../core/functions.php';
 require_admin();
 
 $id = (int) ($_GET['id'] ?? 0);
@@ -11,9 +11,9 @@ $order = get_order_by_id($id);
 if (!$order) {
     $adminTitle = 'Order Not Found';
     $adminActive = 'orders';
-    require __DIR__ . '/includes/admin-header.php';
+    require __DIR__ . '/partials/admin-header.php';
     echo '<div class="panel"><div class="panel__body">Order not found. <a href="' . e(url('admin/orders')) . '">Back to orders</a></div></div>';
-    require __DIR__ . '/includes/admin-footer.php';
+    require __DIR__ . '/partials/admin-footer.php';
     exit;
 }
 
@@ -28,7 +28,7 @@ $statuses = ['pending', 'processing', 'dispatched', 'delivered', 'cancelled'];
 
 $adminTitle = 'Order ' . $order['order_number'];
 $adminActive = 'orders';
-require __DIR__ . '/includes/admin-header.php';
+require __DIR__ . '/partials/admin-header.php';
 ?>
 <p><a class="abtn abtn--ghost abtn--sm" href="<?= e(url('admin/orders')) ?>"><i class="fa-solid fa-arrow-left"></i> Back to Orders</a></p>
 <?php if ($flash): ?><div class="alert-inline alert-inline--success"><?= e($flash) ?></div><?php endif; ?>
@@ -105,4 +105,4 @@ require __DIR__ . '/includes/admin-header.php';
         </div>
     </div>
 </div>
-<?php require __DIR__ . '/includes/admin-footer.php'; ?>
+<?php require __DIR__ . '/partials/admin-footer.php'; ?>

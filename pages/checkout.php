@@ -3,7 +3,7 @@
  * Checkout page. Redirects to homepage if the cart is empty. Posts to
  * api/order.php which recomputes the total server-side and hands off to CC Avenue.
  */
-require_once __DIR__ . '/../includes/functions.php';
+require_once __DIR__ . '/../core/functions.php';
 
 $items = cart_items();
 if (!$items) {
@@ -28,7 +28,7 @@ $seo = [
     'description' => 'Complete your order securely.',
     'canonical'   => BASE_URL . '/checkout/',
 ];
-require __DIR__ . '/../includes/header.php';
+require __DIR__ . '/../core/header.php';
 
 $slots = ['Morning (8-12)', 'Afternoon (12-4)', 'Evening (4-8)', 'Midnight (11-1)'];
 $v = fn(string $k) => e((string) ($old[$k] ?? ''));
@@ -99,4 +99,4 @@ $v = fn(string $k) => e((string) ($old[$k] ?? ''));
         </div>
     </form>
 </main>
-<?php require __DIR__ . '/../includes/footer.php'; ?>
+<?php require __DIR__ . '/../core/footer.php'; ?>

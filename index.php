@@ -3,7 +3,7 @@
  * Homepage. Reads editable content from data/homepage_config.json so the admin
  * homepage editor can change banners, featured products, promos, SEO and FAQs.
  */
-require_once __DIR__ . '/includes/functions.php';
+require_once __DIR__ . '/core/functions.php';
 
 $cfg = homepage_config();
 $slides = $cfg['hero_slides'] ?? [];
@@ -43,7 +43,7 @@ $seo = [
     'schema_data'   => ['faqs' => $faqs],
 ];
 
-require __DIR__ . '/includes/header.php';
+require __DIR__ . '/core/header.php';
 ?>
 
 <main>
@@ -101,7 +101,7 @@ require __DIR__ . '/includes/header.php';
             <div class="carousel__viewport">
                 <div class="carousel__track">
                     <?php foreach ($featured as $product) {
-                        include __DIR__ . '/includes/product-card.php';
+                        include __DIR__ . '/core/product-card.php';
                     } ?>
                 </div>
             </div>
@@ -140,7 +140,7 @@ require __DIR__ . '/includes/header.php';
                 <div class="carousel__viewport">
                     <div class="carousel__track">
                         <?php foreach (array_slice($items, 0, 8) as $product) {
-                            include __DIR__ . '/includes/product-card.php';
+                            include __DIR__ . '/core/product-card.php';
                         } ?>
                     </div>
                 </div>
@@ -187,4 +187,4 @@ require __DIR__ . '/includes/header.php';
     </section>
 </main>
 
-<?php require __DIR__ . '/includes/footer.php'; ?>
+<?php require __DIR__ . '/core/footer.php'; ?>

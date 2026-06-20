@@ -7,7 +7,7 @@
  * (any password accepted for demo accounts). Password hashing with bcrypt is
  * wired so swapping to a real users table is a one-line change.
  */
-require_once __DIR__ . '/../includes/functions.php';
+require_once __DIR__ . '/../core/functions.php';
 
 $action = $_REQUEST['action'] ?? '';
 

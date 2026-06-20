@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/../includes/functions.php';
+require_once __DIR__ . '/../core/functions.php';
 
 $sent = false;
 $error = '';
@@ -25,7 +25,7 @@ $seo = [
     'canonical'   => BASE_URL . '/contact-us/',
     'schema'      => ['organization'],
 ];
-require __DIR__ . '/../includes/header.php';
+require __DIR__ . '/../core/header.php';
 ?>
 <main class="container section">
     <h1 class="section__title">Contact Us</h1>
@@ -63,4 +63,4 @@ require __DIR__ . '/../includes/header.php';
         </aside>
     </div>
 </main>
-<?php require __DIR__ . '/../includes/footer.php'; ?>
+<?php require __DIR__ . '/../core/footer.php'; ?>

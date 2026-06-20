@@ -2,7 +2,7 @@
 /**
  * Admin dashboard — KPI cards, charts and recent activity.
  */
-require_once __DIR__ . '/../includes/functions.php';
+require_once __DIR__ . '/../core/functions.php';
 require_admin();
 
 $a = get_analytics();
@@ -32,7 +32,7 @@ $adminCharts = [
 
 $adminTitle = 'Dashboard';
 $adminActive = 'dashboard';
-require __DIR__ . '/includes/admin-header.php';
+require __DIR__ . '/partials/admin-header.php';
 ?>
 <div class="stat-grid">
     <div class="stat-card">
@@ -114,4 +114,4 @@ require __DIR__ . '/includes/admin-header.php';
     </div>
 </div>
 
-<?php require __DIR__ . '/includes/admin-footer.php'; ?>
+<?php require __DIR__ . '/partials/admin-footer.php'; ?>

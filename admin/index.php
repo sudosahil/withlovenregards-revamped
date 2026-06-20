@@ -6,7 +6,7 @@
  *   username: admin   password: admin123
  * The password is verified against a bcrypt hash so the live swap is trivial.
  */
-require_once __DIR__ . '/../includes/functions.php';
+require_once __DIR__ . '/../core/functions.php';
 
 // Logout
 if (($_GET['action'] ?? '') === 'logout') {

@@ -2,7 +2,7 @@
 /**
  * Cart page. Session-based; line edits and removals go through api/cart.php.
  */
-require_once __DIR__ . '/../includes/functions.php';
+require_once __DIR__ . '/../core/functions.php';
 
 $items = cart_items();
 $subtotal = cart_subtotal();
@@ -14,7 +14,7 @@ $seo = [
     'description' => 'Review the flowers, cakes and gifts in your cart before checkout.',
     'canonical'   => BASE_URL . '/cart/',
 ];
-require __DIR__ . '/../includes/header.php';
+require __DIR__ . '/../core/header.php';
 ?>
 <main class="container">
     <h1 class="section__title" style="margin:24px 0;">Shopping Cart</h1>
@@ -67,4 +67,4 @@ require __DIR__ . '/../includes/header.php';
         </div>
     <?php endif; ?>
 </main>
-<?php require __DIR__ . '/../includes/footer.php'; ?>
+<?php require __DIR__ . '/../core/footer.php'; ?>

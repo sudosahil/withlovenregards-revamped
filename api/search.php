@@ -2,7 +2,7 @@
 /**
  * Search AJAX endpoint. GET ?q= returns up to 10 matching products.
  */
-require_once __DIR__ . '/../includes/functions.php';
+require_once __DIR__ . '/../core/functions.php';
 
 $term = trim((string) ($_GET['q'] ?? ''));
 if ($term === '') {

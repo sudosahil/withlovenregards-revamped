@@ -3,7 +3,7 @@
  * Admin shell header. Every admin page includes this after its own
  * require_admin() guard. Expects $adminTitle and optional $adminActive (slug).
  */
-require_once __DIR__ . '/../../includes/functions.php';
+require_once __DIR__ . '/../../core/functions.php';
 
 $adminTitle = $adminTitle ?? 'Dashboard';
 $adminActive = $adminActive ?? '';

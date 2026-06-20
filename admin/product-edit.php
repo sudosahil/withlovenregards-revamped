@@ -3,7 +3,7 @@
  * Add / edit a product. Full form with auto-slug, image upload (WebP conversion
  * on the server when live), spec key-value pairs and feature toggles.
  */
-require_once __DIR__ . '/../includes/functions.php';
+require_once __DIR__ . '/../core/functions.php';
 require_admin();
 
 $id = (int) ($_GET['id'] ?? 0);
@@ -21,7 +21,7 @@ $categories = get_top_categories();
 
 $adminTitle = $isEdit ? 'Edit Product' : 'Add Product';
 $adminActive = 'products';
-require __DIR__ . '/includes/admin-header.php';
+require __DIR__ . '/partials/admin-header.php';
 ?>
 <p><a class="abtn abtn--ghost abtn--sm" href="<?= e(url('admin/products')) ?>"><i class="fa-solid fa-arrow-left"></i> Back to Products</a></p>
 <?php if ($flash): ?><div class="alert-inline alert-inline--success"><?= e($flash) ?></div><?php endif; ?>
@@ -105,4 +105,4 @@ require __DIR__ . '/includes/admin-header.php';
         </div>
     </div>
 </form>
-<?php require __DIR__ . '/includes/admin-footer.php'; ?>
+<?php require __DIR__ . '/partials/admin-footer.php'; ?>

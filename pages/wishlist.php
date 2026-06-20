@@ -2,7 +2,7 @@
 /**
  * Standalone wishlist page (session-based, available to guests).
  */
-require_once __DIR__ . '/../includes/functions.php';
+require_once __DIR__ . '/../core/functions.php';
 
 $wishProducts = array_values(array_filter(array_map(fn($id) => get_product_by_id((int) $id), wishlist_items())));
 
@@ -11,7 +11,7 @@ $seo = [
     'description' => 'Your saved flowers, cakes and gifts.',
     'canonical'   => BASE_URL . '/wishlist/',
 ];
-require __DIR__ . '/../includes/header.php';
+require __DIR__ . '/../core/header.php';
 ?>
 <main class="container">
     <h1 class="section__title" style="margin:24px 0;">My Wishlist</h1>
@@ -25,9 +25,9 @@ require __DIR__ . '/../includes/header.php';
     <?php else: ?>
         <div class="product-grid">
             <?php foreach ($wishProducts as $product) {
-                include __DIR__ . '/../includes/product-card.php';
+                include __DIR__ . '/../core/product-card.php';
             } ?>
         </div>
     <?php endif; ?>
 </main>
-<?php require __DIR__ . '/../includes/footer.php'; ?>
+<?php require __DIR__ . '/../core/footer.php'; ?>

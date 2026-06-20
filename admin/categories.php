@@ -2,7 +2,7 @@
 /**
  * Category management — list top-level and sub categories, add new.
  */
-require_once __DIR__ . '/../includes/functions.php';
+require_once __DIR__ . '/../core/functions.php';
 require_admin();
 
 $top = get_top_categories();
@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && csrf_verify($_POST['csrf_token'] ??
 
 $adminTitle = 'Categories';
 $adminActive = 'categories';
-require __DIR__ . '/includes/admin-header.php';
+require __DIR__ . '/partials/admin-header.php';
 ?>
 <?php if ($flash): ?><div class="alert-inline alert-inline--success"><?= e($flash) ?></div><?php endif; ?>
 <div class="panel-grid panel-grid--thirds">
@@ -65,4 +65,4 @@ require __DIR__ . '/includes/admin-header.php';
         </div>
     </div>
 </div>
-<?php require __DIR__ . '/includes/admin-footer.php'; ?>
+<?php require __DIR__ . '/partials/admin-footer.php'; ?>

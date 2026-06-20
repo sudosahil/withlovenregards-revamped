@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/../includes/functions.php';
+require_once __DIR__ . '/../core/functions.php';
 $legalTitle = 'Terms and Conditions';
 $legalSlug = 'terms-and-conditions';
 $legalIntro = 'By using this website and placing an order, you agree to the following terms and conditions.';
@@ -12,4 +12,4 @@ $legalSections = [
     ['Limitation of Liability', 'We are not liable for indirect or consequential losses arising from delays beyond our reasonable control, including weather, traffic or incorrect delivery information provided by the customer.'],
     ['Governing Law', 'These terms are governed by the laws of India, with jurisdiction in Pune, Maharashtra.'],
 ];
-require __DIR__ . '/../includes/legal-page.php';
+require __DIR__ . '/../core/legal-page.php';

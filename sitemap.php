@@ -2,7 +2,7 @@
 /**
  * Dynamic XML sitemap. Served at /sitemap.xml via .htaccess.
  */
-require_once __DIR__ . '/includes/functions.php';
+require_once __DIR__ . '/core/functions.php';
 header('Content-Type: application/xml; charset=utf-8');
 
 $urls = [];

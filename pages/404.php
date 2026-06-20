@@ -2,7 +2,7 @@
 /**
  * 404 Not Found.
  */
-require_once __DIR__ . '/../includes/functions.php';
+require_once __DIR__ . '/../core/functions.php';
 http_response_code(404);
 
 $seo = [
@@ -10,7 +10,7 @@ $seo = [
     'description' => 'The page you are looking for could not be found.',
     'canonical'   => BASE_URL . '/404/',
 ];
-require __DIR__ . '/../includes/header.php';
+require __DIR__ . '/../core/header.php';
 ?>
 <main class="container">
     <div class="empty-state" style="padding:80px 20px;">
@@ -21,4 +21,4 @@ require __DIR__ . '/../includes/header.php';
         <a class="btn btn--primary" href="<?= e(url()) ?>">Back to Home</a>
     </div>
 </main>
-<?php require __DIR__ . '/../includes/footer.php'; ?>
+<?php require __DIR__ . '/../core/footer.php'; ?>

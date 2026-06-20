@@ -3,7 +3,7 @@
  * Cart AJAX endpoint. Actions: add | update | remove | count | get.
  * Response envelope: { data, error }.
  */
-require_once __DIR__ . '/../includes/functions.php';
+require_once __DIR__ . '/../core/functions.php';
 
 $action = $_REQUEST['action'] ?? '';
 $method = $_SERVER['REQUEST_METHOD'];

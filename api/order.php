@@ -4,7 +4,7 @@
  * server-side prices (the client total is NEVER trusted), records a pending
  * order in the session and hands off to CC Avenue.
  */
-require_once __DIR__ . '/../includes/functions.php';
+require_once __DIR__ . '/../core/functions.php';
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     header('Location: ' . url('checkout'));

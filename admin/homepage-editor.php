@@ -3,7 +3,7 @@
  * Homepage editor — edits data/homepage_config.json which index.php reads.
  * Edits hero slides, featured products, promo tiles, SEO content and FAQs.
  */
-require_once __DIR__ . '/../includes/functions.php';
+require_once __DIR__ . '/../core/functions.php';
 require_admin();
 
 $configFile = ROOT_PATH . '/data/homepage_config.json';
@@ -64,7 +64,7 @@ $allProducts = get_products();
 
 $adminTitle = 'Homepage Editor';
 $adminActive = 'homepage-editor';
-require __DIR__ . '/includes/admin-header.php';
+require __DIR__ . '/partials/admin-header.php';
 ?>
 <?php if ($flash): ?><div class="alert-inline alert-inline--success"><?= e($flash) ?></div><?php endif; ?>
 <form method="post">
@@ -135,4 +135,4 @@ require __DIR__ . '/includes/admin-header.php';
 
     <button class="abtn abtn--primary" type="submit" style="justify-content:center;"><i class="fa-solid fa-floppy-disk"></i> Save Homepage</button>
 </form>
-<?php require __DIR__ . '/includes/admin-footer.php'; ?>
+<?php require __DIR__ . '/partials/admin-footer.php'; ?>

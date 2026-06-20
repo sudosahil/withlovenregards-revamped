@@ -2,7 +2,7 @@
 /**
  * Search results page. ?q= term.
  */
-require_once __DIR__ . '/../includes/functions.php';
+require_once __DIR__ . '/../core/functions.php';
 
 $term = trim((string) ($_GET['q'] ?? ''));
 $results = $term !== '' ? search_products($term) : [];
@@ -12,7 +12,7 @@ $seo = [
     'description' => 'Search results for flowers, cakes and gifts.',
     'canonical'   => BASE_URL . '/search/',
 ];
-require __DIR__ . '/../includes/header.php';
+require __DIR__ . '/../core/header.php';
 ?>
 <main class="container">
     <h1 class="section__title" style="margin:24px 0;">
@@ -30,9 +30,9 @@ require __DIR__ . '/../includes/header.php';
     <?php else: ?>
         <div class="product-grid">
             <?php foreach ($results as $product) {
-                include __DIR__ . '/../includes/product-card.php';
+                include __DIR__ . '/../core/product-card.php';
             } ?>
         </div>
     <?php endif; ?>
 </main>
-<?php require __DIR__ . '/../includes/footer.php'; ?>
+<?php require __DIR__ . '/../core/footer.php'; ?>

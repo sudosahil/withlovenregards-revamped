@@ -2,7 +2,7 @@
 /**
  * CRM — customer list with search and filter.
  */
-require_once __DIR__ . '/../includes/functions.php';
+require_once __DIR__ . '/../core/functions.php';
 require_admin();
 
 $customers = get_customers();
@@ -23,7 +23,7 @@ $cities = array_values(array_unique(array_map(fn($c) => $c['city'], get_customer
 
 $adminTitle = 'Customers';
 $adminActive = 'customers';
-require __DIR__ . '/includes/admin-header.php';
+require __DIR__ . '/partials/admin-header.php';
 ?>
 <div class="panel">
     <div class="panel__body">
@@ -62,4 +62,4 @@ require __DIR__ . '/includes/admin-header.php';
         </table>
     </div>
 </div>
-<?php require __DIR__ . '/includes/admin-footer.php'; ?>
+<?php require __DIR__ . '/partials/admin-footer.php'; ?>

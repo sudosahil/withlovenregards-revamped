@@ -3,7 +3,7 @@
  * Abandoned cart tracker — email/phone, cart contents, value, time since,
  * recovery status with quick actions and a WhatsApp follow-up link.
  */
-require_once __DIR__ . '/../includes/functions.php';
+require_once __DIR__ . '/../core/functions.php';
 require_admin();
 
 $carts = get_abandoned_carts();
@@ -11,7 +11,7 @@ usort($carts, fn($x, $y) => strcmp($y['last_activity'], $x['last_activity']));
 
 $adminTitle = 'Abandoned Carts';
 $adminActive = 'abandoned-carts';
-require __DIR__ . '/includes/admin-header.php';
+require __DIR__ . '/partials/admin-header.php';
 
 $recoveryMsg = rawurlencode('Hi! You left some lovely items in your cart at ' . SITE_NAME . '. Complete your order now and we\'ll get them delivered fresh!');
 ?>
@@ -44,4 +44,4 @@ $recoveryMsg = rawurlencode('Hi! You left some lovely items in your cart at ' . 
         </table>
     </div>
 </div>
-<?php require __DIR__ . '/includes/admin-footer.php'; ?>
+<?php require __DIR__ . '/partials/admin-footer.php'; ?>

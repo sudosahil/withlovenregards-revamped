@@ -3,7 +3,7 @@
  * Combined login / register page with two tabs. Posts to api/auth.php.
  * #login and #register anchors select the corresponding tab on load.
  */
-require_once __DIR__ . '/../includes/functions.php';
+require_once __DIR__ . '/../core/functions.php';
 
 if (is_logged_in()) {
     header('Location: ' . url('my-account'));
@@ -18,7 +18,7 @@ $seo = [
     'description' => 'Sign in to your account or create a new one to track orders and save favourites.',
     'canonical'   => BASE_URL . '/login-register/',
 ];
-require __DIR__ . '/../includes/header.php';
+require __DIR__ . '/../core/header.php';
 ?>
 <main class="container">
     <div class="auth-wrap">
@@ -57,4 +57,4 @@ require __DIR__ . '/../includes/header.php';
         </div>
     </div>
 </main>
-<?php require __DIR__ . '/../includes/footer.php'; ?>
+<?php require __DIR__ . '/../core/footer.php'; ?>

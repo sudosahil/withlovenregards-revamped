@@ -3,7 +3,7 @@
  * CRM — single customer profile: info, order history, lifetime metrics,
  * internal notes and tags.
  */
-require_once __DIR__ . '/../includes/functions.php';
+require_once __DIR__ . '/../core/functions.php';
 require_admin();
 
 $id = (int) ($_GET['id'] ?? 0);
@@ -11,9 +11,9 @@ $cust = get_customer_by_id($id);
 if (!$cust) {
     $adminTitle = 'Customer Not Found';
     $adminActive = 'customers';
-    require __DIR__ . '/includes/admin-header.php';
+    require __DIR__ . '/partials/admin-header.php';
     echo '<div class="panel"><div class="panel__body">Customer not found. <a href="' . e(url('admin/customers')) . '">Back</a></div></div>';
-    require __DIR__ . '/includes/admin-footer.php';
+    require __DIR__ . '/partials/admin-footer.php';
     exit;
 }
 
@@ -35,7 +35,7 @@ if (strtotime($cust['last_order_date']) < strtotime('-60 days')) $tags[] = ['At 
 
 $adminTitle = $cust['name'];
 $adminActive = 'customers';
-require __DIR__ . '/includes/admin-header.php';
+require __DIR__ . '/partials/admin-header.php';
 ?>
 <p><a class="abtn abtn--ghost abtn--sm" href="<?= e(url('admin/customers')) ?>"><i class="fa-solid fa-arrow-left"></i> Back to Customers</a></p>
 <?php if ($flash): ?><div class="alert-inline alert-inline--success"><?= e($flash) ?></div><?php endif; ?>
@@ -96,4 +96,4 @@ require __DIR__ . '/includes/admin-header.php';
         </div>
     </div>
 </div>
-<?php require __DIR__ . '/includes/admin-footer.php'; ?>
+<?php require __DIR__ . '/partials/admin-footer.php'; ?>

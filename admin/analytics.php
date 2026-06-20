@@ -2,7 +2,7 @@
 /**
  * Deep analytics — revenue trend, status split, top products and a KPI summary.
  */
-require_once __DIR__ . '/../includes/functions.php';
+require_once __DIR__ . '/../core/functions.php';
 require_admin();
 
 $a = get_analytics();
@@ -26,7 +26,7 @@ $adminCharts = [
 
 $adminTitle = 'Analytics';
 $adminActive = 'analytics';
-require __DIR__ . '/includes/admin-header.php';
+require __DIR__ . '/partials/admin-header.php';
 ?>
 <div class="stat-grid">
     <div class="stat-card"><div class="stat-card__icon stat-card__icon--green"><i class="fa-solid fa-indian-rupee-sign"></i></div><div><div class="stat-card__label">30-Day Revenue</div><div class="stat-card__value"><?= e(price($totalRevenue)) ?></div></div></div>
@@ -64,4 +64,4 @@ require __DIR__ . '/includes/admin-header.php';
         </table>
     </div>
 </div>
-<?php require __DIR__ . '/includes/admin-footer.php'; ?>
+<?php require __DIR__ . '/partials/admin-footer.php'; ?>

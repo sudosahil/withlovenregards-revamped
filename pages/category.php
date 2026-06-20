@@ -4,7 +4,7 @@
  * Routed by .htaccess: ?category=flowers[&subcategory=roses].
  * Filter params: ?price_min, ?price_max, ?sort, ?type (comma list), ?occasion.
  */
-require_once __DIR__ . '/../includes/functions.php';
+require_once __DIR__ . '/../core/functions.php';
 
 $catSlug = preg_replace('/[^a-z0-9\-]/', '', strtolower($_GET['category'] ?? ''));
 $subSlug = preg_replace('/[^a-z0-9\-]/', '', strtolower($_GET['subcategory'] ?? ''));
@@ -75,7 +75,7 @@ $seo = [
     'schema_data' => ['breadcrumb' => $crumbs, 'items' => $pageItems, 'list_name' => $active['name'], 'faqs' => get_faqs()],
 ];
 
-require __DIR__ . '/../includes/header.php';
+require __DIR__ . '/../core/header.php';
 
 /** Build a URL preserving the current query but overriding one key. */
 function page_url(int $n): string
@@ -152,7 +152,7 @@ function page_url(int $n): string
                 <?php if ($pageItems): ?>
                     <div class="product-grid">
                         <?php foreach ($pageItems as $product) {
-                            include __DIR__ . '/../includes/product-card.php';
+                            include __DIR__ . '/../core/product-card.php';
                         } ?>
                     </div>
 
@@ -205,4 +205,4 @@ function page_url(int $n): string
     </section>
 </main>
 
-<?php require __DIR__ . '/../includes/footer.php'; ?>
+<?php require __DIR__ . '/../core/footer.php'; ?>

@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/../includes/functions.php';
+require_once __DIR__ . '/../core/functions.php';
 $legalTitle = 'Shipping Disclaimer';
 $legalSlug = 'shipping-disclaimer';
 $legalIntro = 'Please review our delivery terms so we can serve you better.';
@@ -10,4 +10,4 @@ $legalSections = [
     ['Product Substitution', 'Fresh flowers are seasonal. In rare cases we may substitute flowers or containers of equal or greater value while preserving the overall look and theme of your order.'],
     ['Failed Delivery', 'If the recipient is unavailable or the address is incorrect, our delivery partner will attempt to contact them. Re-delivery may incur additional charges. We are not liable for delays caused by incorrect address details.'],
 ];
-require __DIR__ . '/../includes/legal-page.php';
+require __DIR__ . '/../core/legal-page.php';

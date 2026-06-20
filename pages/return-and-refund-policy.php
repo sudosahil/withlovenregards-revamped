@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/../includes/functions.php';
+require_once __DIR__ . '/../core/functions.php';
 $legalTitle = 'Return and Refund Policy';
 $legalSlug = 'return-and-refund-policy';
 $legalIntro = 'We want you to be delighted with every order. Because our products are perishable, the following return and refund terms apply.';
@@ -10,4 +10,4 @@ $legalSections = [
     ['Refund Method & Timeline', 'Approved refunds are processed to your original payment method via CC Avenue and typically reflect within 5–7 business days, depending on your bank.'],
     ['Non-Delivery', 'In the rare event we are unable to deliver your order, you will be offered a re-delivery or a full refund.'],
 ];
-require __DIR__ . '/../includes/legal-page.php';
+require __DIR__ . '/../core/legal-page.php';

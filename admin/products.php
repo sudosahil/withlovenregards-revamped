@@ -3,13 +3,13 @@
  * Admin product list — thumbnail, name, category, price, stock, status toggle,
  * inline price edit, add-new button.
  */
-require_once __DIR__ . '/../includes/functions.php';
+require_once __DIR__ . '/../core/functions.php';
 require_admin();
 
 $products = get_products();
 $adminTitle = 'Products';
 $adminActive = 'products';
-require __DIR__ . '/includes/admin-header.php';
+require __DIR__ . '/partials/admin-header.php';
 ?>
 <div class="panel">
     <div class="panel__head">
@@ -41,4 +41,4 @@ require __DIR__ . '/includes/admin-header.php';
         </table>
     </div>
 </div>
-<?php require __DIR__ . '/includes/admin-footer.php'; ?>
+<?php require __DIR__ . '/partials/admin-footer.php'; ?>

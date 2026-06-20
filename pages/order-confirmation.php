@@ -3,7 +3,7 @@
  * Post-purchase confirmation. Reads the last order from the session (set by the
  * CC Avenue callback) or shows a generic recorded-pending message.
  */
-require_once __DIR__ . '/../includes/functions.php';
+require_once __DIR__ . '/../core/functions.php';
 
 $orderNumber = preg_replace('/[^A-Za-z0-9\-]/', '', $_GET['order'] ?? '');
 $paid = isset($_GET['paid']);
@@ -15,7 +15,7 @@ $seo = [
     'description' => 'Your order has been received.',
     'canonical'   => BASE_URL . '/order-confirmation/',
 ];
-require __DIR__ . '/../includes/header.php';
+require __DIR__ . '/../core/header.php';
 ?>
 <main class="container">
     <div class="card-box" style="max-width:640px;margin:40px auto;text-align:center;">
@@ -44,5 +44,5 @@ require __DIR__ . '/../includes/header.php';
 </main>
 <?php
 unset($_SESSION['last_order']);
-require __DIR__ . '/../includes/footer.php';
+require __DIR__ . '/../core/footer.php';
 ?>

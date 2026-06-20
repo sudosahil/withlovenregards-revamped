@@ -4,7 +4,7 @@
  * Product title is the single H1. Delivery datepicker enforces the 5 PM IST
  * cutoff (resolved server-side, see WLNR.earliestDeliveryDate in footer.php).
  */
-require_once __DIR__ . '/../includes/functions.php';
+require_once __DIR__ . '/../core/functions.php';
 
 $slug = preg_replace('/[^a-z0-9\-]/', '', strtolower($_GET['slug'] ?? ''));
 $product = get_product_by_slug($slug);
@@ -35,7 +35,7 @@ $seo = [
     'schema_data' => ['product' => $product, 'breadcrumb' => $crumbs],
 ];
 
-require __DIR__ . '/../includes/header.php';
+require __DIR__ . '/../core/header.php';
 
 $shareUrl = rawurlencode(product_url($product));
 $shareText = rawurlencode($product['name'] . ' — ' . SITE_NAME);
@@ -129,7 +129,7 @@ $shareText = rawurlencode($product['name'] . ' — ' . SITE_NAME);
             <div class="carousel__viewport">
                 <div class="carousel__track">
                     <?php foreach ($similar as $product) {
-                        include __DIR__ . '/../includes/product-card.php';
+                        include __DIR__ . '/../core/product-card.php';
                     } ?>
                 </div>
             </div>
@@ -139,4 +139,4 @@ $shareText = rawurlencode($product['name'] . ' — ' . SITE_NAME);
     <?php endif; ?>
 </main>
 
-<?php require __DIR__ . '/../includes/footer.php'; ?>
+<?php require __DIR__ . '/../core/footer.php'; ?>

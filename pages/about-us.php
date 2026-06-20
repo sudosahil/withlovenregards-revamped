@@ -1,12 +1,12 @@
 <?php
-require_once __DIR__ . '/../includes/functions.php';
+require_once __DIR__ . '/../core/functions.php';
 $seo = [
     'title'       => 'About Us | ' . SITE_NAME,
     'description' => 'Learn about WithLoveNRegards — Pune\'s trusted online florist and gifting destination delivering fresh flowers, cakes and gifts across India.',
     'canonical'   => BASE_URL . '/about-us/',
     'schema'      => ['organization'],
 ];
-require __DIR__ . '/../includes/header.php';
+require __DIR__ . '/../core/header.php';
 ?>
 <main class="container section">
     <h1 class="section__title">About WithLoveNRegards</h1>
@@ -21,4 +21,4 @@ require __DIR__ . '/../includes/header.php';
         <p style="margin-top:24px;"><a class="btn btn--primary" href="<?= e(url('flowers')) ?>">Start Shopping</a></p>
     </div>
 </main>
-<?php require __DIR__ . '/../includes/footer.php'; ?>
+<?php require __DIR__ . '/../core/footer.php'; ?>

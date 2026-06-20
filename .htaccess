@@ -16,7 +16,7 @@ RewriteCond %{REQUEST_FILENAME} -f [OR]
 RewriteCond %{REQUEST_FILENAME} -d
 RewriteRule ^ - [L]
 
-RewriteRule ^(assets|api|admin/includes)/ - [L]
+RewriteRule ^(assets|api|admin/partials)/ - [L]
 
 # --- Static SEO endpoints -------------------------------------------------
 RewriteRule ^sitemap\.xml$ sitemap.php [L]

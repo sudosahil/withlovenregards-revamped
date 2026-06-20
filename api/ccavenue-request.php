@@ -10,7 +10,7 @@
  * Keys are intentionally empty until live. When MERCHANT_ID / ACCESS_CODE /
  * WORKING_KEY are filled in settings, this auto-submits to CC Avenue.
  */
-require_once __DIR__ . '/../includes/functions.php';
+require_once __DIR__ . '/../core/functions.php';
 
 // --- Credentials (empty until live; overridable via admin settings) ------
 $settings = site_settings();
