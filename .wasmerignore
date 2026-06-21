@@ -1,0 +1,13 @@
+.git
+.github
+.claude
+node_modules
+*.zip
+fresh deploy/
+.shots
+scripts/gen_placeholders.py
+scripts/fetch_stock_images.py
+scripts/trim_borders.py
+README.md
+DEPLOY.md
+_t_*.html

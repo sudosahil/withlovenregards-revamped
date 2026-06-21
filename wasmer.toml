@@ -1,0 +1,17 @@
+# Wasmer package definition for the WithLoveNRegards PHP app.
+# Wasmer has no Apache, so routing is handled by scripts/router.php (the same
+# router used for local dev), served via PHP's built-in web server.
+
+[dependencies]
+"php/php" = "^8.3"
+
+[fs]
+"/app" = "."
+
+[[command]]
+name = "run"
+module = "php/php:php"
+runner = "wasi"
+
+[command.annotations.wasi]
+main-args = ["-S", "localhost:8080", "-t", "/app", "/app/scripts/router.php"]
