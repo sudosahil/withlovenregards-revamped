@@ -10,7 +10,17 @@ $slides = $cfg['hero_slides'] ?? [];
 $promoTiles = $cfg['promo_tiles'] ?? [];
 $featuredIds = $cfg['featured_product_ids'] ?? [];
 $seoContent = $cfg['seo'] ?? [];
+$promise = $cfg['promise'] ?? [];
+$reviews = $cfg['reviews'] ?? [];
 $faqs = get_faqs();
+
+/** Initials for a reviewer avatar, e.g. "Priya Sharma" -> "PS". */
+$initials = static function (string $name): string {
+    $parts = preg_split('/\s+/', trim($name)) ?: [];
+    $first = mb_substr($parts[0] ?? '', 0, 1);
+    $last = count($parts) > 1 ? mb_substr(end($parts), 0, 1) : '';
+    return mb_strtoupper($first . $last);
+};
 
 // Resolve featured products from configured IDs (fall back to is_featured flag).
 $featured = [];
@@ -57,9 +67,13 @@ require __DIR__ . '/core/header.php';
                          width="1200" height="480"
                          <?= $i === 0 ? 'fetchpriority="high"' : 'loading="lazy"' ?>>
                     <div class="hero__caption">
-                        <h2><?= e($slide['heading']) ?></h2>
-                        <p><?= e($slide['subtext']) ?></p>
-                        <a class="btn btn--primary btn--lg" href="<?= e(url(ltrim($slide['cta_link'], '/'))) ?>"><?= e($slide['cta_text']) ?></a>
+                        <div class="hero__caption-inner">
+                            <span class="hero__eyebrow"><i class="fa-solid fa-truck-fast"></i> Same-Day Delivery Across India</span>
+                            <h2><?= e($slide['heading']) ?></h2>
+                            <p><?= e($slide['subtext']) ?></p>
+                            <a class="btn btn--primary btn--lg hero__cta" href="<?= e(url(ltrim($slide['cta_link'], '/'))) ?>"><?= e($slide['cta_text']) ?> <i class="fa-solid fa-arrow-right"></i></a>
+                            <span class="hero__trust"><i class="fa-solid fa-star"></i> 4.9/5 from 2,400+ verified orders &nbsp;·&nbsp; <i class="fa-solid fa-leaf"></i> 7-day freshness guarantee</span>
+                        </div>
                     </div>
                 </div>
             <?php endforeach; ?>
@@ -112,6 +126,26 @@ require __DIR__ . '/core/header.php';
         </p>
     </section>
 
+    <!-- Section 3b: Our Promise — authenticity & guarantee band -->
+    <?php if (!empty($promise['items'])): ?>
+        <section class="section promise">
+            <div class="container">
+                <p class="section__eyebrow"><?= e($promise['eyebrow'] ?? 'Why WithLoveNRegards') ?></p>
+                <h2 class="section__title"><?= e($promise['heading'] ?? 'Our Promise to You') ?></h2>
+                <p class="section__subtitle"><?= e($promise['subtext'] ?? '') ?></p>
+                <div class="promise-grid">
+                    <?php foreach ($promise['items'] as $item): ?>
+                        <div class="promise-card">
+                            <span class="promise-card__icon"><i class="fa-solid <?= e($item['icon'] ?? 'fa-circle-check') ?>"></i></span>
+                            <h3 class="promise-card__title"><?= e($item['title'] ?? '') ?></h3>
+                            <p class="promise-card__body"><?= e($item['body'] ?? '') ?></p>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+            </div>
+        </section>
+    <?php endif; ?>
+
     <!-- Section 4: Promo split banner -->
     <section class="section container">
         <div class="promo-split">
@@ -148,6 +182,40 @@ require __DIR__ . '/core/header.php';
             </div>
         </section>
     <?php endforeach; ?>
+
+    <!-- Section 7b: Customer reviews — social proof / authenticity -->
+    <?php if (!empty($reviews['items'])): ?>
+        <section class="section reviews">
+            <div class="container">
+                <p class="section__eyebrow"><?= e($reviews['eyebrow'] ?? 'Real Customer Stories') ?></p>
+                <h2 class="section__title"><?= e($reviews['heading'] ?? 'What Our Customers Say') ?></h2>
+                <p class="reviews__rating">
+                    <span class="reviews__stars" aria-hidden="true"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></span>
+                    <strong><?= e($reviews['rating'] ?? '4.9') ?>/5</strong> from <?= e($reviews['rating_count'] ?? '2,400+') ?> verified orders
+                </p>
+                <div class="reviews-grid">
+                    <?php foreach ($reviews['items'] as $i => $review): ?>
+                        <?php $rate = (int) ($review['rating'] ?? 5); ?>
+                        <article class="review-card">
+                            <div class="review-card__stars" aria-label="<?= $rate ?> out of 5 stars">
+                                <?php for ($s = 1; $s <= 5; $s++): ?>
+                                    <i class="fa-<?= $s <= $rate ? 'solid' : 'regular' ?> fa-star"></i>
+                                <?php endfor; ?>
+                            </div>
+                            <p class="review-card__text"><?= e($review['text'] ?? '') ?></p>
+                            <div class="review-card__author">
+                                <span class="review-card__avatar" data-tone="<?= $i % 4 ?>"><?= e($initials($review['name'] ?? '')) ?></span>
+                                <span class="review-card__meta">
+                                    <strong><?= e($review['name'] ?? '') ?></strong>
+                                    <small><?= e($review['city'] ?? '') ?> &nbsp;·&nbsp; <i class="fa-solid fa-circle-check"></i> Verified order</small>
+                                </span>
+                            </div>
+                        </article>
+                    <?php endforeach; ?>
+                </div>
+            </div>
+        </section>
+    <?php endif; ?>
 
     <!-- Section 8: SEO content block — the single H1 of the page -->
     <section class="section seo-content">

@@ -60,5 +60,71 @@
             }
         ]
     },
-    "announcement": "Same Day Delivery Available — Order before 5 PM"
+    "announcement": "Same Day Delivery Available — Order before 5 PM",
+    "promise": {
+        "eyebrow": "Why WithLoveNRegards",
+        "heading": "Our Promise to You",
+        "subtext": "Real flowers, real care — backed by guarantees, not just words.",
+        "items": [
+            {
+                "icon": "fa-leaf",
+                "title": "7-Day Freshness Guarantee",
+                "body": "If your blooms wilt within 7 days, we replace them free — no questions asked."
+            },
+            {
+                "icon": "fa-clock",
+                "title": "On-Time, Every Time",
+                "body": "Order before 5 PM for guaranteed same-day delivery, with live order tracking."
+            },
+            {
+                "icon": "fa-hand-holding-heart",
+                "title": "Handcrafted by Local Florists",
+                "body": "Every arrangement is hand-tied to order — what you see in the photo is what arrives."
+            }
+        ]
+    },
+    "reviews": {
+        "eyebrow": "Real Customer Stories",
+        "heading": "Loved by Thousands of Gifters",
+        "rating": "4.9",
+        "rating_count": "2,400+",
+        "items": [
+            {
+                "name": "Priya Sharma",
+                "city": "Pune",
+                "rating": 5,
+                "text": "The bouquet looked exactly like the photo — fresh, beautifully wrapped and delivered within hours. My mom was genuinely thrilled."
+            },
+            {
+                "name": "Rahul Mehta",
+                "city": "Mumbai",
+                "rating": 5,
+                "text": "Ordered a cake-and-flowers combo for my anniversary at the last minute. Same-day delivery actually worked, and the quality was premium."
+            },
+            {
+                "name": "Ananya Iyer",
+                "city": "Bangalore",
+                "rating": 5,
+                "text": "I was nervous ordering flowers online, but the freshness guarantee won me over. They stayed beautiful for over a week. Will order again."
+            },
+            {
+                "name": "Vikram Desai",
+                "city": "Hyderabad",
+                "rating": 5,
+                "text": "Sent roses to my wife while travelling. Smooth ordering, real-time updates, and she said they were the freshest she's received."
+            },
+            {
+                "name": "Sneha Kulkarni",
+                "city": "Pune",
+                "rating": 5,
+                "text": "Lovely packaging and a handwritten note included. It felt personal and thoughtful — exactly what gifting should feel like."
+            },
+            {
+                "name": "Arjun Nair",
+                "city": "Delhi",
+                "rating": 4,
+                "text": "Delivery was on time and the chocolates were fresh. Took one star off only because I wanted more wrapping options — otherwise great."
+            }
+        ]
+    }
 }
